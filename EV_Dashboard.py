@@ -2,7 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-df = pd.read_csv("cleaned_electri_vehicle_data.csv")
+import os
+
+csv_path = os.path.join(os.path.dirname(__file__), "cleaned_electri_vehicle_data.csv")
+df = pd.read_csv(csv_path)
 
 
 # Clean column names
