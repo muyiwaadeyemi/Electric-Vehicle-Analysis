@@ -1,12 +1,10 @@
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-import os
-
 csv_path = os.path.join(os.path.dirname(__file__), "cleaned_electri_vehicle_data.csv")
 df = pd.read_csv(csv_path)
-
 
 # Clean column names
 df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
@@ -111,7 +109,6 @@ st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Overview", "Trends", "Make Distribution", "Raw Data"])
 
 # Load your dataset here
-df = pd.read_csv("cleaned_electri_vehicle_data.csv")
 
 
 # Render the selected page
